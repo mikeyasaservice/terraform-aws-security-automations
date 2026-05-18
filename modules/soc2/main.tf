@@ -68,7 +68,7 @@ data "aws_iam_policy_document" "kms_pol" {
     ]
 
     resources = [
-      "arn:aws:kms:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:key/*"
+      "arn:aws:kms:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:key/*"
     ]
 
     principals {
@@ -84,7 +84,7 @@ data "aws_iam_policy_document" "kms_pol" {
     ]
 
     resources = [
-      "arn:aws:kms:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:key/*"
+      "arn:aws:kms:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:key/*"
     ]
 
     principals {
@@ -157,7 +157,6 @@ resource "aws_securityhub_standards_subscription" "cis_v1" {
 
   timeouts {
     create = "30m"
-    update = "30m"
   }
 }
 
@@ -168,7 +167,6 @@ resource "aws_securityhub_standards_subscription" "cis_v1_2" {
 
   timeouts {
     create = "30m"
-    update = "30m"
   }
 }
 
@@ -179,7 +177,6 @@ resource "aws_securityhub_standards_subscription" "cis_v1_4" {
 
   timeouts {
     create = "30m"
-    update = "30m"
   }
 }
 
@@ -190,7 +187,6 @@ resource "aws_securityhub_standards_subscription" "nist_800_53" {
 
   timeouts {
     create = "30m"
-    update = "30m"
   }
 }
 
@@ -201,6 +197,5 @@ resource "aws_securityhub_standards_subscription" "pci_321" {
 
   timeouts {
     create = "30m"
-    update = "30m"
   }
 }
